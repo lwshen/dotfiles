@@ -41,8 +41,8 @@ git_clone()
         git clone https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions
     fi
     if [ ! -d ~/.my_config/oh-my-zsh/custom/plugins/zsh-completions ]; then
-        # git clone https://github.com/zsh-users/zsh-completions ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions
-        git clone https://github.com.cnpmjs.org/zsh-users/zsh-completions ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions
+        # git clone https://github.com/zsh-users/zsh-completions ~/.my_config/oh-my-zsh/custom/plugins/zsh-completions
+        git clone https://github.com.cnpmjs.org/zsh-users/zsh-completions ~/.my_config/oh-my-zsh/custom/plugins/zsh-completions
     fi
     if [ ! -d ~/.my_config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
         # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.my_config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
