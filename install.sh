@@ -29,25 +29,32 @@ link_file()
 git_clone()
 {
     if [ ! -d ~/.my_config ]; then
-        git clone https://github.com/lwshen/dotfiles.git ~/.my_config
+        # git clone https://github.com/lwshen/dotfiles.git ~/.my_config
+        git clone https://hub.fastgit.org/lwshen/dotfiles.git ~/.my_config
     fi
     if [ ! -d ~/.my_config/oh-my-zsh ]; then
-        git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.my_config/oh-my-zsh
+        # git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.my_config/oh-my-zsh
+        git clone https://hub.fastgit.org/ohmyzsh/ohmyzsh.git ~/.my_config/oh-my-zsh
     fi
     if [ ! -d ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
-        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions
+        # git clone https://github.com/zsh-users/zsh-autosuggestions ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions
+        git clone https://hub.fastgit.org/zsh-users/zsh-autosuggestions ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions
     fi
     if [ ! -d ~/.my_config/oh-my-zsh/custom/plugins/zsh-completions ]; then
-        git clone https://github.com/zsh-users/zsh-completions ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions
+        # git clone https://github.com/zsh-users/zsh-completions ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions
+        git clone https://hub.fastgit.org/zsh-users/zsh-completions ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions
     fi
     if [ ! -d ~/.my_config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.my_config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+        # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.my_config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+        git clone https://hub.fastgit.org/zsh-users/zsh-syntax-highlighting.git ~/.my_config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     fi
     if [ ! -d ~/.my_config/oh-my-zsh/custom/plugins/zsh-nvm ]; then
-        git clone https://github.com/lukechilds/zsh-nvm ~/.my_config/oh-my-zsh/custom/plugins/zsh-nvm
+        # git clone https://github.com/lukechilds/zsh-nvm ~/.my_config/oh-my-zsh/custom/plugins/zsh-nvm
+        git clone https://hub.fastgit.org/lukechilds/zsh-nvm ~/.my_config/oh-my-zsh/custom/plugins/zsh-nvm
     fi
     if [ ! -f ~/.my_config/oh-my-zsh/themes/headline.zsh-theme ]; then
-        wget https://raw.githubusercontent.com/Moarram/headline/main/headline.zsh-theme -P ~/.my_config/oh-my-zsh/themes
+        # wget https://raw.githubusercontent.com/Moarram/headline/main/headline.zsh-theme -P ~/.my_config/oh-my-zsh/themes
+        wget https://raw.fastgit.org/Moarram/headline/main/headline.zsh-theme -P ~/.my_config/oh-my-zsh/themes
     fi
     echo "-- git clone OK"
 }
