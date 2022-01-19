@@ -72,7 +72,7 @@ link_file_list()
 {
     link_file  ~/.my_config/home/.gitconfig ~/.gitconfig
     link_file  ~/.my_config/home/.gitmessage ~/.gitmessage
-    link_file  ~/.my_config/home/.gitconfig_global ~/.gitconfig_global
+    link_file  ~/.my_config/home/.gitignore_global ~/.gitignore_global
     link_file  ~/.my_config/home/.vimrc ~/.vimrc
     link_file  ~/.my_config/home/.zshrc ~/.zshrc
     link_file  ~/.my_config/home/.pathrc ~/.pathrc
