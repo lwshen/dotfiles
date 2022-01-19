@@ -7,9 +7,21 @@ via wget:
 sh -c "$(wget https://raw.githubusercontent.com/lwshen/dotfiles/main/install.sh -O -)"
 ```
 
+or
+
+```bash
+sh -c "$(wget https://gitcode.net/shenlw66/dotfiles/-/raw/main/install.sh -O -)"
+```
+
 via curl:
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/lwshen/dotfiles/main/install.sh)"
+```
+
+or
+
+```bash
+sh -c "$(curl -fsSL https://gitcode.net/shenlw66/dotfiles/-/raw/main/install.sh)"
 ```
 
 ## Before install
