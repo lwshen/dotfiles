@@ -1,0 +1,58 @@
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+
+export M3_HOME=$HOME/code/apache-maven-3.6.3
+export PATH=$M3_HOME/bin:$PATH
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH:.
+export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/slw/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/slw/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/slw/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/slw/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PATH="/usr/local/opt/python@3.7/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/python@3.7/lib"
+export PKG_CONFIG_PATH="/usr/local/opt/python@3.7/lib/pkgconfig"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="/Users/slw/.sdkman"
+# [[ -s "/Users/slw/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/slw/.sdkman/bin/sdkman-init.sh"
+
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+# export VAGRANT_DEFAULT_PROVIDER="vmware_desktop"
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter
+
+export FLUTTER_HOME="$HOME/code/flutter"
+export PATH=$PATH:$FLUTTER_HOME/bin:$FLUTTER_HOME/bin/cache/dart-sdk/bin
+
+export MVND_HOME="$HOME/code/mvnd-0.7.1-darwin-amd64"
+export PATH=$PATH:$MVND_HOME/bin
