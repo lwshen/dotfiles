@@ -76,7 +76,7 @@ link_file_list()
     link_file  ~/.my_config/home/.vimrc ~/.vimrc
     link_file  ~/.my_config/home/.zshrc ~/.zshrc
     link_file  ~/.my_config/home/.pathrc ~/.pathrc
-    link_file  ~/.my_config/home/.aliases ~/.aliases
+    link_file  ~/.my_config/home/.aliasrc ~/.aliasrc
     link_file  ~/.my_config/home/.condarc ~/.condarc
     link_file  ~/.my_config/home/.npmrc ~/.npmrc
     link_file  ~/.my_config/home/.tmux.conf ~/.tmux.conf
