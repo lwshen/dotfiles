@@ -80,6 +80,7 @@ link_file_list()
     link_file  ~/.my_config/home/.condarc ~/.condarc
     link_file  ~/.my_config/home/.npmrc ~/.npmrc
     link_file  ~/.my_config/home/.tmux.conf ~/.tmux.conf
+    link_file  ~/.my_config/home/.tmux.conf.local ~/.tmux.conf.local
     mkdir -p ~/.cargo
     link_file ~/.my_config/home/.cargo/config ~/.cargo/config
     echo "-- link files OK"
