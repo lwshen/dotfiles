@@ -79,7 +79,7 @@ plugins=(
 	zsh-syntax-highlighting
 	zsh-completions
 	z
-	zsh-nvm
+	#zsh-nvm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -116,7 +116,7 @@ DEFAULT_USER=$USER
 source ~/.aliasrc
 
 # Activate path
-source ~/.pathrc
+# source ~/.pathrc
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
