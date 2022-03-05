@@ -10,7 +10,7 @@ sh -c "$(wget https://raw.githubusercontent.com/lwshen/dotfiles/main/install.sh 
 or
 
 ```bash
-wget -qO- https://gitcode.net/shenlw66/dotfiles/-/raw/main/install.sh | sed -e "s/raw.githubusercontent.com/raw.fastgit.org/g" | sed -e "s/github.com/hub.fastgit.org/g" | bash
+wget -qO- https://gitcode.net/shenlw66/dotfiles/-/raw/main/install.sh | sed -e "s/raw.githubusercontent.com/raw.fastgit.xyz/g" | sed -e "s/github.com/hub.fastgit.xyz/g" | bash
 ```
 
 via curl:
@@ -21,7 +21,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/lwshen/dotfiles/main/insta
 or
 
 ```bash
-curl -sS -o- https://gitcode.net/shenlw66/dotfiles/-/raw/main/install.sh | sed -e "s/raw.githubusercontent.com/raw.fastgit.org/g" | sed -e "s/github.com/hub.fastgit.org/g" | bash
+curl -sS -o- https://gitcode.net/shenlw66/dotfiles/-/raw/main/install.sh | sed -e "s/raw.githubusercontent.com/raw.fastgit.xyz/g" | sed -e "s/github.com/hub.fastgit.xyz/g" | bash
 ```
 
 ## Before install
