@@ -2,7 +2,14 @@
 
 ## Install
 
-via wget:
+**via wget:**
+
+```bash
+wget -qO- https://gitcode.net/shenlw66/dotfiles/-/raw/main/install.sh | sed -e "s/raw.githubusercontent.com/gh.slw.im\/raw.githubusercontent.com/g" | sed -e "s/github.com/gh.slw.im\/github.com/g" | bash
+```
+
+or
+
 ```bash
 sh -c "$(wget https://raw.githubusercontent.com/lwshen/dotfiles/main/install.sh -O -)"
 ```
@@ -13,7 +20,14 @@ or
 wget -qO- https://gitcode.net/shenlw66/dotfiles/-/raw/main/install.sh | sed -e "s/raw.githubusercontent.com/cdn.staticaly.com\/gh/g" | sed -e "s/github.com/hub.fastgit.xyz/g" | bash
 ```
 
-via curl:
+**via curl:**
+
+```bash
+curl -sS -o- https://gitcode.net/shenlw66/dotfiles/-/raw/main/install.sh | sed -e "s/raw.githubusercontent.com/gh.slw.im\/raw.githubusercontent.com/g" | sed -e "s/github.com/gh.slw.im\/github.com/g" | bash
+```
+
+or
+
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/lwshen/dotfiles/main/install.sh)"
 ```
