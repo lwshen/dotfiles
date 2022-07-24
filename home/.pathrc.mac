@@ -6,10 +6,10 @@ export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
-export M3_HOME=$HOME/code/apache-maven-3.6.3
+export M3_HOME=$HOME/env/apache-maven-3.6.3
 export PATH=$M3_HOME/bin:$PATH
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH:.
 export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
 
@@ -28,8 +28,11 @@ export LANG=en_US.UTF-8
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
-export FLUTTER_HOME="$HOME/code/flutter"
+export FLUTTER_HOME="$HOME/env/flutter"
 export PATH=$PATH:$FLUTTER_HOME/bin:$FLUTTER_HOME/bin/cache/dart-sdk/bin
 
-export MVND_HOME="$HOME/code/mvnd-0.7.1-darwin-amd64"
+export MVND_HOME="$HOME/env/mvnd-0.7.1-darwin-amd64"
 export PATH=$PATH:$MVND_HOME/bin
+
+# goup
+source "$HOME/.go/env"
