@@ -114,8 +114,11 @@ DEFAULT_USER=$USER
 source ~/.aliasrc
 
 # Activate path
-source ~/.pathrc
-# source ~/.pathrc.mac
+if [[ `uname` == 'Darwin' ]]; then
+  source ~/.pathrc.mac
+else
+  source ~/.pathrc
+fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
