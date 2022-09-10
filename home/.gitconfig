@@ -3,8 +3,8 @@
 	email = shenlw66@gmail.com
 	signingkey = 21C548FD90FADE1AEFD78EDF27E4F7BBCEC0066A
 [commit]
-	gpgsign = true
-	template = ~/.gitmessage
+	# gpgsign = true
+	# template = ~/.gitmessage
 [gpg]
 	program = /usr/local/bin/gpg
 [core]
