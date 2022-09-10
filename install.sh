@@ -64,6 +64,10 @@ link_directory_list()
 # files
 link_file_list()
 {
+    if [ ! -f ~/.my_config/home/.pathrc.local ]; then
+        echo ".pathrc.local not found, creating..."
+        touch ~/.my_config/home/.pathrc.local
+    fi
     link_file  ~/.my_config/home/.gitconfig ~/.gitconfig
     link_file  ~/.my_config/home/.gitmessage ~/.gitmessage
     link_file  ~/.my_config/home/.gitignore_global ~/.gitignore_global
