@@ -116,3 +116,7 @@ if [[ `uname` == 'Darwin' ]]; then
 else
   source ~/.pathrc
 fi
+
+if [[ -f ~/.pathrc.local ]]; then
+  source ~/.pathrc.local
+fi
