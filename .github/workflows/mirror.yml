@@ -28,4 +28,4 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            https://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_ACCESS_TOKEN }}@gitlab.lab.slinvent.com/${{ secrets.GITLAB_USERNAME }}/dotfiles.git
+            https://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_ACCESS_TOKEN }}@git.vip.cpolar.cn/${{ secrets.GITLAB_USERNAME }}/dotfiles.git
