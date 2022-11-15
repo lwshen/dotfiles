@@ -11,6 +11,8 @@ alias gcn='git checkout -b'
 alias gn='git branch --show-current'
 alias gst='git status'
 alias glog='git log --all --graph --decorate'
+alias gp='git push'
+alias gpc='git push --set-upstream origin $(git_current_branch)'
 
 alias myip='curl ipinfo.io/ip'
 
