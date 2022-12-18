@@ -14,6 +14,8 @@ alias glog='git log --all --graph --decorate'
 alias gp='git push'
 alias gpc='git push --set-upstream origin $(git_current_branch)'
 
+alias gpall='find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull'
+
 alias myip='curl ipinfo.io/ip'
 
 alias tls='tmux ls'
