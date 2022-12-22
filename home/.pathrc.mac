@@ -46,7 +46,8 @@ export PATH=$PATH:$FLUTTER_HOME/bin:$FLUTTER_HOME/bin/cache/dart-sdk/bin
 export MVND_HOME="$HOME/env/mvnd-0.7.1-darwin-amd64"
 export PATH=$PATH:$MVND_HOME/bin
 
+export GODIR="$HOME/env/go"
+export PATH=$PATH:$GODIR/bin
 export GOPATH=$HOME/go
-export GOBIN=$(go env GOPATH)/bin
-export PATH=$PATH:$GOPATH
-export PATH=$PATH:$GOBIN
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH:$GOBIN

@@ -1,3 +1,4 @@
 oh-my-zsh/
 .DS_Store
 home/.config.local
+home/.pathrc.local
