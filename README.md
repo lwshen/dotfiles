@@ -1,5 +1,9 @@
 # dotfiles
 
+## Preview
+
+![dotfiles](dotfiles.png)
+
 ## Install
 
 **via wget:**
