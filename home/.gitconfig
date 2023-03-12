@@ -14,10 +14,10 @@
     # TODO: the VSCode insider determination is ugly. but the regular expression determination seems not working
     #editor = "if [[ $TERM_PROGRAM_VERSION == *-insider ]]; then ED='code-insiders -w'; elif [ $TERM_PROGRAM = vscode ]; then ED='code -w'; else ED='vim'; fi; $ED" # fail
     editor = "if [ $TERM_PROGRAM_VERSION = 1.62.0-insider -o $TERM_PROGRAM_VERSION = 1.59.0-insider ]; then ED='code-insiders -w'; elif [ $TERM_PROGRAM = vscode ]; then ED='code -w'; else ED='vim'; fi; $ED"
-[https]
-    #proxy = http://127.0.0.1:7890
-[http]
-    #proxy = http://127.0.0.1:7890
+# [https]
+#     proxy = http://127.0.0.1:7890
+# [http]
+#     proxy = http://127.0.0.1:7890
 
 [alias]
     co = checkout
