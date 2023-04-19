@@ -74,7 +74,6 @@ plugins=(
 	zsh-syntax-highlighting
 	zsh-completions
 	z
-	zsh-nvm
 )
 
 source $ZSH/oh-my-zsh.sh
