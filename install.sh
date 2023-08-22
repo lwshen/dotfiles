@@ -35,14 +35,17 @@ git_clone()
     if [ ! -d ~/.my_config/oh-my-zsh ]; then
         git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.my_config/oh-my-zsh
     fi
-    if [ ! -d ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
-        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.my_config/oh-my-zsh/custom/plugins/zsh-autosuggestions
+    if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     fi
-    if [ ! -d ~/.my_config/oh-my-zsh/custom/plugins/zsh-completions ]; then
-        git clone https://github.com/zsh-users/zsh-completions ~/.my_config/oh-my-zsh/custom/plugins/zsh-completions
+    if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-completions ]; then
+        git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-completions
     fi
-    if [ ! -d ~/.my_config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.my_config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]; then
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    fi
+    if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]; then
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     fi
     if [ ! -f ~/.my_config/oh-my-zsh/themes/headline.zsh-theme ]; then
         wget https://raw.githubusercontent.com/Moarram/headline/main/headline.zsh-theme -P ~/.my_config/oh-my-zsh/themes
@@ -78,6 +81,7 @@ link_file_list()
     link_file  ~/.my_config/home/.npmrc ~/.npmrc
     link_file  ~/.my_config/home/.tmux.conf ~/.tmux.conf
     link_file  ~/.my_config/home/.tmux.conf.local ~/.tmux.conf.local
+    link_file  ~/.my_config/home/.p10k.zsh ~/.p10k.zsh
     mkdir -p ~/.cargo
     link_file ~/.my_config/home/.cargo/config ~/.cargo/config
     echo "-- link files OK"
