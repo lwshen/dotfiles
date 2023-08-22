@@ -27,14 +27,15 @@ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebr
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 
-export M3_HOME=$HOME/env/apache-maven-3.6.3
-export PATH=$M3_HOME/bin:$PATH
+# export M3_HOME=$HOME/env/apache-maven-3.6.3
+# export PATH=$M3_HOME/bin:$PATH
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
-export PATH=$JAVA_HOME/bin:$PATH:.
-export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+# export PATH=$JAVA_HOME/bin:$PATH:.
+# export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
 
-# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# export MVND_HOME="$HOME/env/mvnd-0.7.1-darwin-amd64"
+# export PATH=$PATH:$MVND_HOME/bin
 
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
@@ -42,11 +43,8 @@ export LANG=en_US.UTF-8
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
-export FLUTTER_HOME="$HOME/env/flutter3.3.0"
+export FLUTTER_HOME="$HOME/env/flutter"
 export PATH=$PATH:$FLUTTER_HOME/bin:$FLUTTER_HOME/bin/cache/dart-sdk/bin
-
-export MVND_HOME="$HOME/env/mvnd-0.7.1-darwin-amd64"
-export PATH=$PATH:$MVND_HOME/bin
 
 export GODIR="$HOME/env/go"
 export PATH=$PATH:$GODIR/bin
