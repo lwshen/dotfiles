@@ -1,7 +1,7 @@
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
 
-replace-with = 'rsproxy'
+replace-with = 'rsproxy-sparse'
 
 # 清华大学
 [source.tuna]
@@ -24,3 +24,6 @@ registry = "git://crates.rustcc.cn/crates.io-index"
 registry = "https://rsproxy.cn/crates.io-index"
 [source.rsproxy-sparse]
 registry = "sparse+https://rsproxy.cn/index/"
+
+[net]
+git-fetch-with-cli = true
