@@ -36,19 +36,19 @@ git_clone()
         git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.my_config/oh-my-zsh
     fi
     if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
-        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     fi
     if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-completions ]; then
-        git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-completions
+        git clone --depth=1 https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-completions
     fi
     if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]; then
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+        git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     fi
     if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]; then
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     fi
-    if [ ! -f ~/.my_config/oh-my-zsh/themes/headline.zsh-theme ]; then
-        wget https://raw.githubusercontent.com/Moarram/headline/main/headline.zsh-theme -P ~/.my_config/oh-my-zsh/themes
+    if [ ! -f ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/headline.zsh-theme ]; then
+        wget https://raw.githubusercontent.com/Moarram/headline/main/headline.zsh-theme -P ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes
     fi
     echo "-- git clone OK"
 }
