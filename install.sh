@@ -84,6 +84,8 @@ link_file_list()
     link_file  ~/.my_config/home/.p10k.zsh ~/.p10k.zsh
     mkdir -p ~/.cargo
     link_file ~/.my_config/home/.cargo/config ~/.cargo/config
+    mkdir -p ~/.m2
+    link_file ~/.my_config/home/.m2/settings.xml ~/.m2/settings.xml
     echo "-- link files OK"
 }
 
