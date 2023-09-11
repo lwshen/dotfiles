@@ -16,6 +16,15 @@ alias gpc='git push --set-upstream origin $(git_current_branch)'
 
 alias gpall='find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull'
 
+alias nio="ni --prefer-offline"
+alias s="nr start"
+alias d="nr dev"
+alias b="nr build"
+alias c="nr typecheck"
+alias lint="nr lint"
+alias lintf="nr lint --fix"
+alias nu="npx taze@latest latest -I -r -f"
+
 alias myip='curl ipinfo.io/ip'
 
 alias tls='tmux ls'
