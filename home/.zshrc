@@ -151,6 +151,7 @@ load-nvmrc
 
 # goenv
 # git clone https://github.com/go-nv/goenv.git ~/.goenv
+export GO_BUILD_MIRROR_URL=https://golang.google.cn/dl/
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
