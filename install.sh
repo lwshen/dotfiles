@@ -34,6 +34,7 @@ git_clone()
     fi
     if [ ! -d ~/.my_config/oh-my-zsh ]; then
         git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.my_config/oh-my-zsh
+        link_directory ~/.my_config/oh-my-zsh ~/.oh-my-zsh
     fi
     if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
         git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -102,7 +103,7 @@ main()
 {
     hello
     git_clone
-    link_directory_list
+    # link_directory_list
     link_file_list
 }
 
