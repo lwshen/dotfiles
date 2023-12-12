@@ -146,22 +146,39 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+if command -v nvm >/dev/null 2>&1; then
+  add-zsh-hook chpwd load-nvmrc
+  load-nvmrc
+else
+    echo "nvm does not exist. Skip load nvmrc."
+fi
 
 # goenv
 # git clone https://github.com/go-nv/goenv.git ~/.goenv
 export GO_BUILD_MIRROR_URL=https://golang.google.cn/dl/
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
+if [ -d "$HOME/.goenv" ]; then
+  export GOENV_ROOT="$HOME/.goenv"
+  export PATH="$GOENV_ROOT/bin:$PATH"
+  eval "$(goenv init -)"
+  export PATH="$GOROOT/bin:$PATH"
+  export PATH="$PATH:$GOPATH/bin"
+else
+  echo "goenv not found. Run below command to download:"
+  echo "git clone https://github.com/go-nv/goenv.git ~/.goenv"
+fi
+
+
 
 # jenv
 # git clone https://github.com/jenv/jenv.git ~/.jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+if [ -d "$HOME/.jenv/bin" ]; then
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+else
+  echo "jenv not found. Run below command to download:"
+  echo "git clone https://github.com/jenv/jenv.git ~/.jenv"
+fi
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
