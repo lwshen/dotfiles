@@ -13,6 +13,7 @@ alias gst='git status'
 alias glog='git log --all --graph --decorate'
 alias gp='git push'
 alias gpc='git push --set-upstream origin $(git_current_branch)'
+alias gml='gcm;gl'
 
 alias gpall='find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull'
 
