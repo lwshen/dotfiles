@@ -1,0 +1,60 @@
+[user]
+	name = Ryo Shen
+	email = shenlw66@gmail.com
+	signingkey = 21C548FD90FADE1AEFD78EDF27E4F7BBCEC0066A
+[commit]
+	# gpgsign = true
+	# template = ~/.gitmessage
+[gpg]
+	program = /usr/local/bin/gpg
+[core]
+	excludesfile = ~/.gitignore_global
+	# when execute git commit, use the current VSCode / VSCode Insiders editor
+    # if current is not from VSCode / VSCode Insiders, then use vim
+    # TODO: the VSCode insider determination is ugly. but the regular expression determination seems not working
+    #editor = "if [[ $TERM_PROGRAM_VERSION == *-insider ]]; then ED='code-insiders -w'; elif [ $TERM_PROGRAM = vscode ]; then ED='code -w'; else ED='vim'; fi; $ED" # fail
+    editor = "if [ $TERM_PROGRAM_VERSION = 1.62.0-insider -o $TERM_PROGRAM_VERSION = 1.59.0-insider ]; then ED='code-insiders -w'; elif [ $TERM_PROGRAM = vscode ]; then ED='code -w'; else ED='vim'; fi; $ED"
+# [https]
+#     proxy = http://127.0.0.1:7890
+# [http]
+#     proxy = http://127.0.0.1:7890
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+	df = diff
+    lp = log --pretty=oneline --abbrev-commit
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    hist = log --pretty=tformat:'%Cgreen%h%Creset %ad | %s%d %C(bold blue)[%an]%Creset' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    tags = !"git for-each-ref \
+        --sort=taggerdate \
+        --format '%(tag)_,,,_%(taggerdate:raw)_,,,_%(taggername)_,,,_%(subject)' refs/tags \
+        | awk 'BEGIN { FS = \"_,,,_\"  } ; { t=strftime(\"%Y-%m-%d  %H:%M\",$2); printf \"%-20s %-18s %-25s %s\\n\", t, $1, $4, $3  }'"
+    fix = !~/.git-scripts/git-fix.sh
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+# for git >= 2.30, when we do `git init`
+# we can config the default name of the created branch
+# otherwise it will show error message
+[init]
+    defaultBranch = master
+
+# since Git 2.27, we have to set git pull's default strategy ourselves
+# this helps people don't create merge commits, or let them know they are creating merge commits
+# ref: https://stackoverflow.com/a/62653694/2999096
+[pull]
+    rebase = true
+
+# for interactive rebasing
+# https://stackoverflow.com/questions/18571741/multiple-git-editors
+[sequence]
+  editor = code -w

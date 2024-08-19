@@ -1,0 +1,53 @@
+# === NPM BINRAY CHINA ===
+# https://github.com/cnpm/binary-mirror-config/blob/main/package.json#L48
+export NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"
+export NVM_NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"
+export PHANTOMJS_CDNURL="https://cdn.npmmirror.com/binaries/phantomjs"
+export CHROMEDRIVER_CDNURL="https://cdn.npmmirror.com/binaries/chromedriver"
+export OPERADRIVER_CDNURL="https://cdn.npmmirror.com/binaries/operadriver"
+export ELECTRON_MIRROR="https://cdn.npmmirror.com/binaries/electron/"
+export ELECTRON_BUILDER_BINARIES_MIRROR="https://cdn.npmmirror.com/binaries/electron-builder-binaries/"
+export SASS_BINARY_SITE="https://cdn.npmmirror.com/binaries/node-sass"
+export SWC_BINARY_SITE="https://cdn.npmmirror.com/binaries/node-swc"
+export NWJS_URLBASE="https://cdn.npmmirror.com/binaries/nwjs/v"
+export PUPPETEER_DOWNLOAD_HOST="https://cdn.npmmirror.com/binaries"
+export SENTRYCLI_CDNURL="https://cdn.npmmirror.com/binaries/sentry-cli"
+export SAUCECTL_INSTALL_BINARY_MIRROR="https://cdn.npmmirror.com/binaries/saucectl"
+export npm_config_sharp_binary_host="https://cdn.npmmirror.com/binaries/sharp"
+export npm_config_sharp_libvips_binary_host="https://cdn.npmmirror.com/binaries/sharp-libvips"
+export npm_config_robotjs_binary_host="https://cdn.npmmirror.com/binaries/robotj"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+
+# export M3_HOME=$HOME/env/apache-maven-3.6.3
+# export PATH=$M3_HOME/bin:$PATH
+
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+# export PATH=$JAVA_HOME/bin:$PATH:.
+# export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+
+# export MVND_HOME="$HOME/env/mvnd-0.7.1-darwin-amd64"
+# export PATH=$PATH:$MVND_HOME/bin
+
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+export FLUTTER_HOME="$HOME/env/flutter"
+export PATH=$PATH:$FLUTTER_HOME/bin:$FLUTTER_HOME/bin/cache/dart-sdk/bin
+
+# export GODIR="$HOME/env/go"
+# export PATH=$PATH:$GODIR/bin
+# export GOPATH=$HOME/go
+# export GOBIN=$GOPATH/bin
+# export PATH=$PATH:$GOPATH:$GOBIN
