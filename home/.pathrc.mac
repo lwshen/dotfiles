@@ -51,3 +51,5 @@ export PATH=$PATH:$FLUTTER_HOME/bin:$FLUTTER_HOME/bin/cache/dart-sdk/bin
 # export GOPATH=$HOME/go
 # export GOBIN=$GOPATH/bin
 # export PATH=$PATH:$GOPATH:$GOBIN
+
+export COREPACK_ENABLE_AUTO_PIN=0

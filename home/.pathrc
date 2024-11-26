@@ -13,3 +13,5 @@ export PATH=$M3_HOME/bin:$PATH
 
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
+
+export COREPACK_ENABLE_AUTO_PIN=0
