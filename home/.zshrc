@@ -153,21 +153,18 @@ else
     echo "nvm does not exist. Skip load nvmrc."
 fi
 
-# goenv
-# git clone https://github.com/go-nv/goenv.git ~/.goenv
-export GO_BUILD_MIRROR_URL=https://golang.google.cn/dl/
-if [ -d "$HOME/.goenv" ]; then
-  export GOENV_ROOT="$HOME/.goenv"
-  export PATH="$GOENV_ROOT/bin:$PATH"
-  eval "$(goenv init -)"
-  export PATH="$GOROOT/bin:$PATH"
-  export PATH="$PATH:$GOPATH/bin"
+# g shell setup
+if [ -d "$HOME/.g" ]; then
+  if [[ -n $(alias g 2>/dev/null) ]]; then
+      unalias g
+  fi
+  if [ -f "${HOME}/.g/env" ]; then
+      . "${HOME}/.g/env"
+  fi
 else
-  echo "goenv not found. Run below command to download:"
-  echo "git clone https://github.com/go-nv/goenv.git ~/.goenv"
+  echo "g is not found. Run below command to download:"
+  echo "curl -sSL https://raw.githubusercontent.com/lwshen/dotfiles/master/install-g.sh | bash"
 fi
-
-
 
 # jenv
 # git clone https://github.com/jenv/jenv.git ~/.jenv
