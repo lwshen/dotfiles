@@ -17,6 +17,11 @@ alias gml='gcm;gl'
 
 alias gpall='find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull'
 
+alias dup='docker compose up -d'
+alias ddown='docker compose down'
+alias dlog='docker compose logs -f -n 100'
+alias dpull='docker compose pull'
+
 alias nio="ni --prefer-offline"
 alias s="nr start"
 alias d="nr dev"
