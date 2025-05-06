@@ -1,4 +1,4 @@
-# === NPM BINRAY CHINA ===
+# npm
 # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48
 export "COREPACK_NPM_REGISTRY"="https://registry.npmmirror.com"
 export "EDGEDRIVER_CDNURL"="https://npmmirror.com/mirrors/edgedriver"
@@ -28,18 +28,38 @@ export "npm_config_sharp_libvips_binary_host"="https://cdn.npmmirror.com/binarie
 export "npm_config_robotjs_binary_host"="https://cdn.npmmirror.com/binaries/robotjs"
 export "npm_config_gl_binary_host"="https://cdn.npmmirror.com/binaries/gl"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# homebrew
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 
-export JAVA_HOME=$HOME/env/jdk
-export PATH=$JAVA_HOME/bin:$PATH:.
-export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
-
-export M3_HOME=$HOME/env/maven
-export PATH=$M3_HOME/bin:$PATH
+# flutter
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
+
+# export JAVA_HOME=$HOME/env/jdk
+# export PATH=$JAVA_HOME/bin:$PATH:.
+# export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+
+# export M3_HOME=$HOME/env/maven
+# export PATH=$M3_HOME/bin:$PATH
+
+# export FLUTTER_HOME="$HOME/env/flutter"
+# export PATH=$PATH:$FLUTTER_HOME/bin:$FLUTTER_HOME/bin/cache/dart-sdk/bin
+
+# export GODIR="$HOME/env/go"
+# export PATH=$PATH:$GODIR/bin
+# export GOPATH=$HOME/go
+# export GOBIN=$GOPATH/bin
+# export PATH=$PATH:$GOPATH:$GOBIN
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export COREPACK_ENABLE_AUTO_PIN=0

@@ -117,11 +117,7 @@ DEFAULT_USER=$USER
 source ~/.aliasrc
 
 # Activate path
-if [[ `uname` == 'Darwin' ]]; then
-  source ~/.pathrc.mac
-else
-  source ~/.pathrc
-fi
+source ~/.pathrc
 
 if [[ -f ~/.pathrc.local ]]; then
   source ~/.pathrc.local
