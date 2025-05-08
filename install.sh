@@ -74,7 +74,6 @@ link_file_list()
     link_file  ~/.my_config/home/.vimrc ~/.vimrc
     link_file  ~/.my_config/home/.zshrc ~/.zshrc
     link_file  ~/.my_config/home/.pathrc ~/.pathrc
-    link_file  ~/.my_config/home/.pathrc.mac ~/.pathrc.mac
     link_file  ~/.my_config/home/.pathrc.local ~/.pathrc.local
     link_file  ~/.my_config/home/.aliasrc ~/.aliasrc
     link_file  ~/.my_config/home/.condarc ~/.condarc
