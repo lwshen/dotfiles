@@ -116,6 +116,9 @@ DEFAULT_USER=$USER
 # Activate alias
 source ~/.aliasrc
 
+# Activate function
+source ~/.functionrc
+
 # Activate path
 source ~/.pathrc
 
