@@ -29,7 +29,7 @@ alias b="nr build"
 alias c="nr typecheck"
 alias lint="nr lint"
 alias lintf="nr lint --fix"
-alias nu="npx taze@latest latest -I -r -f"
+alias nu="npx -y taze@latest latest -I -r -f"
 
 alias myip='curl ipinfo.io/ip'
 
