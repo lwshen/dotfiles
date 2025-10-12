@@ -113,7 +113,17 @@ function reload() {
 function klaude() {
     export ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic"
     export ANTHROPIC_AUTH_TOKEN="$MOONSHOT_API_KEY"
+    unset ANTHROPIC_API_KEY
     export ANTHROPIC_SMALL_FAST_MODEL="kimi-k2-turbo-preview"
     export ANTHROPIC_MODEL="kimi-k2-turbo-preview"
+    claude "$@"
+}
+
+function glaude() {
+    export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
+    export ANTHROPIC_AUTH_TOKEN="$ZHIPU_API_KEY"
+    unset ANTHROPIC_API_KEY
+    export ANTHROPIC_SMALL_FAST_MODEL="glm-4.6"
+    export ANTHROPIC_MODEL="glm-4.6"
     claude "$@"
 }
