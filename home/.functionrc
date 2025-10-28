@@ -129,3 +129,26 @@ function glaude() {
     export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
     claude "$@"
 }
+
+function mlaude() {
+    export ANTHROPIC_BASE_URL="https://api.minimaxi.com/anthropic"
+    export ANTHROPIC_AUTH_TOKEN="$MINIMAX_API_KEY"
+    unset ANTHROPIC_API_KEY
+    export API_TIMEOUT_MS=3000000
+    export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+    export ANTHROPIC_MODEL="MiniMax-M2"
+    export ANTHROPIC_SMALL_FAST_MODEL="MiniMax-M2"
+    export ANTHROPIC_DEFAULT_SONNET_MODEL="MiniMax-M2"
+    export ANTHROPIC_DEFAULT_OPUS_MODEL="MiniMax-M2"
+    export ANTHROPIC_DEFAULT_HAIKU_MODEL="MiniMax-M2"
+    claude "$@"
+}
+
+function claude-proxy() {
+    export ANTHROPIC_BASE_URL="https://agentrouter.org"
+    export ANTHROPIC_AUTH_TOKEN="$AGENTROUTER_API_KEY"
+    export ANTHROPIC_API_KEY="$AGENTROUTER_API_KEY"
+    unset ANTHROPIC_SMALL_FAST_MODEL
+    unset ANTHROPIC_MODEL
+    claude "$@"
+}
