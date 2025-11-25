@@ -50,10 +50,10 @@ alias s='neofetch'  # run fast
 # Docker Compose basics
 alias dp='docker ps'
 alias dtail='docker logs -tf --tail="50" "$@"'
-alias dcup='docker-compose up -d'
-alias dcdown='docker-compose down'
-alias dclogs='docker-compose logs -tf --tail="50"'
-alias dcpull='docker-compose pull'
+alias dcup='docker compose up -d'
+alias dcdown='docker compose down'
+alias dclogs='docker compose logs -tf --tail="50"'
+alias dcpull='docker compose pull'
 
 # Docker Compose like a pro
 _filter_service() {
@@ -61,11 +61,11 @@ _filter_service() {
 }
 up() {
   _filter_service $1
-  docker-compose -f $COMPOSE_DIR/$service/docker-compose.yml up -d
+  docker compose -f $COMPOSE_DIR/$service/docker compose.yml up -d
 }
 down() {
   _filter_service $1
-  docker-compose -f $COMPOSE_DIR/$service/docker-compose.yml down
+  docker compose -f $COMPOSE_DIR/$service/docker compose.yml down
 }
 restart() {
   _filter_service $1
@@ -73,7 +73,7 @@ restart() {
 }
 pull() {
   _filter_service $1
-  docker-compose -f $COMPOSE_DIR/$service/docker-compose.yml pull
+  docker compose -f $COMPOSE_DIR/$service/docker compose.yml pull
 }
 update() {
   _filter_service $1
@@ -81,5 +81,5 @@ update() {
 }
 logs() {
   _filter_service $1
-  docker-compose -f $COMPOSE_DIR/$service/docker-compose.yml logs -tf --tail=50
+  docker compose -f $COMPOSE_DIR/$service/docker compose.yml logs -tf --tail=50
 }
