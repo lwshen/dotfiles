@@ -54,6 +54,8 @@ alias dcup='docker compose up -d'
 alias dcdown='docker compose down'
 alias dclogs='docker compose logs -tf --tail="50"'
 alias dcpull='docker compose pull'
+alias dcps='docker compose ps'
+alias dcrs='docker compose restart "$@"'
 
 # Docker Compose like a pro
 _filter_service() {
