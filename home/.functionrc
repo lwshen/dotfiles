@@ -123,8 +123,9 @@ function glaude() {
     export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
     export ANTHROPIC_AUTH_TOKEN="$ZHIPU_API_KEY"
     unset ANTHROPIC_API_KEY
-    # export ANTHROPIC_SMALL_FAST_MODEL="glm-4.6"
-    # export ANTHROPIC_MODEL="glm-4.6"
+    export ANTHROPIC_DEFAULT_OPUS_MODEL="GLM-4.7"
+    export ANTHROPIC_DEFAULT_SONNET_MODEL="GLM-4.7"
+    export ANTHROPIC_DEFAULT_HAIKU_MODEL="GLM-4.5-Air"
     export API_TIMEOUT_MS=3000000
     export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
     claude "$@"
