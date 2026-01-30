@@ -44,8 +44,11 @@ alias lsdir='ls -d */' # only list directories
 alias ip="ifconfig | egrep '([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})' -o | egrep -v '\.255\$' | grep -v '127.0.0.1'"
 
 # 显示系统信息
-#alias s='screenfetch' # run slow
-alias s='neofetch'  # run fast
+alias s='fastfetch'
+
+alias ccusage='bunx ccusage@latest'
+alias ccusage-codex='bunx @ccusage/codex@latest'
+alias ccusage-opencode='bunx @ccusage/opencode@latest'
 
 # Docker Compose basics
 alias dp='docker ps'
