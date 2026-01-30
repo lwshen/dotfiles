@@ -62,15 +62,19 @@ alias dcrs='docker compose restart "$@"'
 
 # Docker Compose like a pro
 _filter_service() {
-  service="$1" && [ -z "$1" ] && service=$(ls -l $COMPOSE_DIR | grep '^d' | awk '{print $NF}' | fzf)
+  compose_dir="${PWD}"
+  service="$1"
+  if [ -z "$service" ]; then
+    service=$(ls -l "$compose_dir" | grep '^d' | awk '{print $NF}' | fzf)
+  fi
 }
 up() {
   _filter_service $1
-  docker compose -f $COMPOSE_DIR/$service/docker-compose.yml up -d
+  docker compose -f "$compose_dir/$service/docker-compose.yml" up -d
 }
 down() {
   _filter_service $1
-  docker compose -f $COMPOSE_DIR/$service/docker-compose.yml down
+  docker compose -f "$compose_dir/$service/docker-compose.yml" down
 }
 restart() {
   _filter_service $1
@@ -78,7 +82,7 @@ restart() {
 }
 pull() {
   _filter_service $1
-  docker compose -f $COMPOSE_DIR/$service/docker-compose.yml pull
+  docker compose -f "$compose_dir/$service/docker-compose.yml" pull
 }
 update() {
   _filter_service $1
@@ -86,5 +90,5 @@ update() {
 }
 logs() {
   _filter_service $1
-  docker compose -f $COMPOSE_DIR/$service/docker-compose.yml logs -tf --tail=50
+  docker compose -f "$compose_dir/$service/docker-compose.yml" logs -tf --tail=50
 }
