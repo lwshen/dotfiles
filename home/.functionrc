@@ -110,46 +110,92 @@ function reload() {
     echo "ZSH configuration reloaded!"
 }
 
-function klaude() {
-    export ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic"
-    export ANTHROPIC_AUTH_TOKEN="$MOONSHOT_API_KEY"
-    unset ANTHROPIC_API_KEY
-    export ANTHROPIC_SMALL_FAST_MODEL="kimi-k2-turbo-preview"
-    export ANTHROPIC_MODEL="kimi-k2-turbo-preview"
-    claude "$@"
-}
+# Claude Code Environment Switcher
+# Dependencies: fzf, jq
+# Config: ~/.config/cc-env/profiles.json
+cc-env() {
+    local config_dir="${HOME}/.config/cc-env"
+    local config_file="${config_dir}/profiles.json"
+    local profile="$1"
+    
+    # Managed variables list
+    local vars=("ANTHROPIC_BASE_URL" "ANTHROPIC_AUTH_TOKEN" "ANTHROPIC_MODEL")
 
-function glaude() {
-    export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
-    export ANTHROPIC_AUTH_TOKEN="$ZHIPU_API_KEY"
-    unset ANTHROPIC_API_KEY
-    export ANTHROPIC_DEFAULT_OPUS_MODEL="GLM-4.7"
-    export ANTHROPIC_DEFAULT_SONNET_MODEL="GLM-4.7"
-    export ANTHROPIC_DEFAULT_HAIKU_MODEL="GLM-4.5-Air"
-    export API_TIMEOUT_MS=3000000
-    export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
-    claude "$@"
-}
+    # --- 1. Initialization Check ---
+    if ! command -v jq &> /dev/null || ! command -v fzf &> /dev/null; then
+        echo "❌ Error: 'jq' and 'fzf' are required."
+        return 1
+    fi
 
-function mlaude() {
-    export ANTHROPIC_BASE_URL="https://api.minimaxi.com/anthropic"
-    export ANTHROPIC_AUTH_TOKEN="$MINIMAX_API_KEY"
-    unset ANTHROPIC_API_KEY
-    export API_TIMEOUT_MS=3000000
-    export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
-    export ANTHROPIC_MODEL="MiniMax-M2.1"
-    export ANTHROPIC_SMALL_FAST_MODEL="MiniMax-M2.1"
-    export ANTHROPIC_DEFAULT_SONNET_MODEL="MiniMax-M2.1"
-    export ANTHROPIC_DEFAULT_OPUS_MODEL="MiniMax-M2.1"
-    export ANTHROPIC_DEFAULT_HAIKU_MODEL="MiniMax-M2.1"
-    claude "$@"
+    # Create default config template if missing
+    if [ ! -f "$config_file" ]; then
+        mkdir -p "$config_dir"
+        echo "📂 Creating default config: $config_file"
+        cat <<EOF > "$config_file"
+{
+  "zai": {
+    "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "sk-xxxx",
+    "ANTHROPIC_MODEL": "glm-4.7"
+  }
 }
+EOF
+    fi
 
-function claude-proxy() {
-    export ANTHROPIC_BASE_URL="https://agentrouter.org"
-    export ANTHROPIC_AUTH_TOKEN="$AGENTROUTER_API_KEY"
-    export ANTHROPIC_API_KEY="$AGENTROUTER_API_KEY"
-    unset ANTHROPIC_SMALL_FAST_MODEL
-    unset ANTHROPIC_MODEL
-    claude "$@"
+    # Update from vault if available
+    if command -v vault &> /dev/null; then
+        vault --base-url $VAULT_BASE_URL --api-key $VAULT_API_KEY get --name claude-env --output $config_file
+        echo "✅ Updated config from vault hub"
+    fi
+
+    # --- 2. Select Profile ---
+    if [ -z "$profile" ]; then
+        profile=$( (echo "reset"; jq -r 'keys[]' "$config_file") | fzf \
+            --height=40% \
+            --layout=reverse \
+            --border \
+            --prompt="Select Profile > " \
+            --header="Switch Env (Clears current settings first)" \
+            --preview="if [ {} = 'reset' ]; then echo 'Clear all vars (Restore Default)'; else jq -C --arg k {} '.[\$k]' \"$config_file\"; fi"
+        )
+    fi
+
+    [ -z "$profile" ] && return 0
+
+    # --- 3. Clean Slate (Unset all vars) ---
+    # Unset everything regardless of choice to ensure a clean state
+    for var in "${vars[@]}"; do
+        unset "$var"
+    done
+    
+    if [ "$profile" = "reset" ]; then
+        echo "🧹 All environment variables cleared"
+        return 0
+    fi
+
+    # --- 4. Apply New Configuration ---
+    # Check if profile exists
+    if ! jq -e ".\"$profile\"" "$config_file" > /dev/null; then
+        echo "❌ Profile not found: $profile"
+        return 1
+    fi
+
+    echo "✅ Switched to: $profile"
+
+    for var in "${vars[@]}"; do
+        # Read value from JSON
+        local val
+        val=$(jq -r ".\"$profile\".\"$var\" // empty" "$config_file")
+        
+        if [ -n "$val" ]; then
+            export "$var"="$val"
+            
+            # Log output (Masking token for security)
+            if [ "$var" = "ANTHROPIC_AUTH_TOKEN" ]; then
+                echo "   + export $var=${val:0:6}..."
+            else
+                echo "   + export $var=$val"
+            fi
+        fi
+    done
 }
