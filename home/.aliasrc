@@ -50,6 +50,8 @@ alias ccusage='bunx ccusage@latest'
 alias ccusage-codex='bunx @ccusage/codex@latest'
 alias ccusage-opencode='bunx @ccusage/opencode@latest'
 
+alias ac='source .venv/bin/activate'
+
 # Docker Compose basics
 alias dp='docker ps'
 alias dtail='docker logs -tf --tail="50" "$@"'
